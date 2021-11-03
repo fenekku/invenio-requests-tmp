@@ -1,7 +1,7 @@
-from .config import RequestCommentsServiceConfig, RequestsServiceConfig
-from .services import RequestCommentsService, RequestsService
+from .config import RequestEventsServiceConfig, RequestsServiceConfig
+from .services import RequestEventsService, RequestsService
 
 __all__ = [
-    'RequestsService', 'RequestCommentsService', 'RequestsServiceConfig',
-    'RequestCommentsServiceConfig'
+    'RequestsService', 'RequestEventsService', 'RequestsServiceConfig',
+    'RequestEventsServiceConfig'
 ]

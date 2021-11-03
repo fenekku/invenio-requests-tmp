@@ -14,7 +14,7 @@ from invenio_records_resources.records.api import Record
 from invenio_records_resources.records.systemfields import IndexField, PIDField
 
 from .actions import RequestAction
-from .models import RequestMetadata
+from .models import RequestEventModel, RequestMetadata
 
 
 class Request(Record):
@@ -57,3 +57,9 @@ class Request(Record):
 
     def execute_action(self, action_name):
         return self.get_action(action_name).execute()
+
+
+class RequestEvent(Record):
+    """A Request Event."""
+
+    model_cls = RequestEventModel

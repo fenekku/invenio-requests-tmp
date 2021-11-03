@@ -9,11 +9,26 @@
 
 
 from invenio_records_resources.services import RecordServiceConfig
+from invenio_records_resources.services.records.components import \
+    DataComponent
+
+from ..records.api import RequestEvent
+from .components import RequestComponent
+from .permissions import RequestEventsPermissionPolicy
+from .schemas import RequestEventSchema
 
 
 class RequestsServiceConfig(RecordServiceConfig):
     pass
 
 
-class RequestCommentsServiceConfig(RecordServiceConfig):
-    pass
+class RequestEventsServiceConfig(RecordServiceConfig):
+    """Config."""
+    permission_policy_cls = RequestEventsPermissionPolicy
+    record_cls = RequestEvent
+    schema = RequestEventSchema
+
+    components = [
+        RequestComponent,
+        DataComponent,
+    ]

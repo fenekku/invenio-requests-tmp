@@ -10,8 +10,8 @@
 
 from . import config
 
-from .services import RequestCommentsService, RequestsService, \
-    RequestCommentsServiceConfig, RequestsServiceConfig
+from .services import RequestEventsService, RequestsService, \
+    RequestEventsServiceConfig, RequestsServiceConfig
 
 
 class InvenioRequests:
@@ -47,6 +47,6 @@ class InvenioRequests:
         self.requests_service = RequestsService(
             RequestsServiceConfig()
         )
-        self.request_comments_service = RequestCommentsService(
-            RequestCommentsServiceConfig()
+        self.request_events_service = RequestEventsService(
+            RequestEventsServiceConfig()
         )
